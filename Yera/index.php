@@ -12,16 +12,16 @@
   <?php
         include("conexion.php");
         include("insert.php");
-        include("update.php");
-        include("delete.php");
         include("abm.php");
 
-        $conexion = conectar();
+        /* $conexion = conectar();
         if(!$conexion){
             echo "<h1> error en la db </h1>";
             exit();
-        }
-        $result=mysqli_query($conexion,"select * from tabla1");
+        } */
+        $result=mysqli_query($con,"select * from tabla1");
+
+        
     ?>
     <!-- Escribimos título de las tablas --> 
     <table border=0 cellspacing=2 cellpadding=1> 
@@ -38,9 +38,9 @@
             echo "</TR>"; 
         } 
     //liberamos memoria que ocupa la consulta... 
-    mysqli_free_result($result); 
+    //mysqli_free_result($result); 
     //cerramos la conexión con el motor de BD 
-    mysqli_close($conexion);
+    //mysqli_close($conexion);
     ?>
     </table>
     <a href="abm.php?accion=insert">[INSERTAR]</a>

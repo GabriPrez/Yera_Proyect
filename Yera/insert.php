@@ -1,10 +1,14 @@
-<?php
-$conexion = include 'conexion.php';
-function insertar($nombre){
-    if(isset($_POST["submit"])){
+<?php 
+include('conexion.php');
+if(isset($_POST["submit"])){
     $nombre=$_POST["nombre"];
-    $result = mysqli_query($conexion,"INSERT INTO table1 (nombre) VALUES ($nombre)");
-    echo "success";}
-    print_r($_POST);
-}
+    $sql = "INSERT INTO tabla1 (nombre) VALUES ('$nombre')";
+    $con->query($sql);
+    echo "success";
+
+    echo "<a href='index.php'>volver atrás</a>";
+} 
+
+
 ?>
+
